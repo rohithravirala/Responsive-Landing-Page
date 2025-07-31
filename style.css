@@ -1,0 +1,317 @@
+/* Basic Reset & Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {    
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; /* Initial background color */
+    color: #fff;
+    padding: 0px 0px;
+    z-index: 1000; /* Ensure it stays on top */
+    transition: background-color 0.3s ease, padding 0.3s ease; /* Smooth transition for scroll effect */
+}
+
+.navbar .container {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.navbar .logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 550px;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #494646;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for navigation links */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #00bcd4; /* Accent color for underline */
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00bcd4; /* Change text color on hover */
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+/* Style for navigation bar when scrolled (added by JavaScript) */
+.navbar.scrolled {
+    background-color: #aa00ff; /* Different background color when scrolled */
+    padding: 10px 0; /* Slightly reduce padding when scrolled */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.scrolled .nav-links a {
+    color: #f8f8f8; /* Adjust link color if needed when scrolled */
+}
+
+.navbar.scrolled .nav-links a:hover {
+    color: #fff700; /* Different hover color when scrolled */
+}
+
+
+/* Hero Section */
+.hero-section {
+    background-color: #282c34;
+    color: #fff;
+    text-align: center;
+    padding: 150px 0 100px; /* Adjust padding to make space for fixed nav */
+    min-height: 100vh; /* Make it full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ff0000;
+}
+
+.content-section:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.content-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #222121;
+}
+
+.content-section p, .content-section ul {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.content-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Responsive Design (Basic) */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hero-section {
+        padding: 100px 0 60px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .content-section {
+        padding: 60px 0;
+    }
+
+    .content-section h2 {
+        font-size: 2em;
+    }
+}
+
+.contact-details {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  color: #444;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.contact-form input[type="submit"] {
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #0097a7;
+}
+
+.social-links {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  max-width: 400px;
+}
+
+.social-links h3 {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 0px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0077b5; /* LinkedIn blue as a hover highlight */
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+}
+
+/* About and Connect Section Styling */
+#about2, #connect {
+  padding: 120px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+#about2 h2, #connect h2 {
+  font-size: 28px;
+  color: #0a0a0a;
+  margin-bottom: 15px;
+}
+
+#connect {
+    padding: 0px;
+}
+
+#about2 h3 {
+  font-size: 22px;
+  color: #333;
+  margin-top: 25px;
+}
+
+#about2 p, #about2 ul li {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+/* Social Links Styling */
+.social-links {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 450px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 17px;
+  color: #222;
+  margin: 12px 0;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0073b1; /* LinkedIn-like hover effect */
+}
+
+.social-icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-links a:hover .social-icon {
+  transform: scale(1.1);
+}
